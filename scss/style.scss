@@ -38,6 +38,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   i {
     font-size: 50px;
   }
@@ -49,30 +50,56 @@ section {
   @extend %gradientTimeBoadr;
   @extend %wrapper;
   & .container {
-    display: flex;
+    text-align: center;
     height: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
   }
   & .timer {
     @extend %gradientTimeBoadr;
+    margin: 0 auto;
     border-radius: 5px;
-    width: 40%;
-    height: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    width: 50%;
 
     & div {
       font-size: 20px;
     }
 
     & .sep {
-      height: 60px;
+      height: 80%;
       width: 2px;
       background: white;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .timer {
+    div {
+      &.sep {
+        display: none;
+      }
+    }
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  * {
+    font-size: 10px;
   }
 }

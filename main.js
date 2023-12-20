@@ -1,5 +1,3 @@
-import "./style.scss";
-
 const year = document.querySelector("h3");
 const nowDate = new Date();
 const newYerDate = new Date("01.01.2024");
